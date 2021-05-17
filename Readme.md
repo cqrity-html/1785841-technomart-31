@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Алексей Бондарь](https://up.htmlacademy.ru/htmlcss/31/user/1785841).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Остаповец] (https://htmlacademy.ru/profile/seraphim).
 
 ---
 
