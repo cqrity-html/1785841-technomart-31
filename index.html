@@ -16,15 +16,13 @@
   <header class="main-header">
     <div class="main-header-bar-background">
       <div class="main-header-bar container">
-        <a class="logo main-logo">ТЕХНОМАРТ</a>
+        <a class="logo main-logo main-logo-index">ТЕХНОМАРТ</a>
         <form class="search-form" action="https://echo.htmlacademy.ru" method="GET">
           <label><input type="search" name="search" placeholder="Поиск:"></label>
         </form>
-        <div class="user-controls">
-          <a href="blank.html" class="user-controls-item main-header-bookmarks">Закладки: 0</a>
-          <a href="blank.html" class="user-controls-item main-header-cart">Корзина: 0</a>
-          <a href="blank.html" class="user-controls-item main-header-order">Оформить заказ</a>
-        </div>
+        <a href="blank.html" class="user-controls-item main-header-bookmarks">Закладки: 0</a>
+        <a href="blank.html" class="user-controls-item main-header-cart">Корзина: 0</a>
+        <a href="blank.html" class="user-controls-item main-header-order">Оформить заказ</a>
       </div>
     </div>
     <div class="header-description container">
@@ -92,18 +90,22 @@
             </div>
           </div>
           <div class="slider-buttons">
-            <button class="slider-button-back"></button>
-            <button class="slider-button-next"></button>
+            <button class="slider-button-back" aria-label="Предыдущий слайд"></button>
+            <button class="slider-button-next" aria-label="Следующий слайд"></button>
           </div>
           <a class="button slider-button" href="blank.html">Открыть каталог</a>
         </li>
         <li class="slider slider-drills visually-hidden">
-          <div class=slider-header>
-            <h2>Дрели</h2>
-            <p>Соседям на радость!</p>
+          <div class="slider-header-back">
+            <div class=slider-header>
+              <h2>Дрели</h2>
+              <p>Соседям на радость!</p>
+            </div>
           </div>
-          <button class="button slider-button-back"></button>
-          <button class="button slider-button-next"></button>
+          <div class="slider-buttons">
+            <button class="slider-button-back" aria-label="Предыдущий слайд"></button>
+            <button class="slider-button-next" aria-label="Следующий слайд"></button>
+          </div>
           <a class="button slider-button" href="blank.html">Открыть каталог</a>
         </li>
       </ul>
@@ -120,15 +122,15 @@
             <img src="img/bfg9000.jpg" width="184" height="164" alt="Перфоратор BOSCH с удлинённым сверлом">
           </div>
           <p class="old-price">32500 Р.</p>
-          <a class="price button" href="blank.html">25500 Р.</a>
+          <p class="item-price">25500 Р.</p>
         </li>
-        <li class="catalog-item">
+        <li class="catalog-item catalog-item-new">
           <h3>Перфоратор BOSCH BFG 3000</h3>
           <div class="product-card-image">
             <img src="img/bfg3000.jpg" width="127" height="112" alt="Перфоратор BOSCH с коротким сверлом">
           </div>
           <p class="old-price">25500 Р.</p>
-          <a class="price button" href="blank.html">15500 Р.</a>
+          <p class="item-price">15500 Р.</p>
         </li>
         <li class="catalog-item">
           <h3>Перфоратор BOSCH BFG 6000</h3>
@@ -136,15 +138,15 @@
             <img src="img/bfg6000.jpg" width="144" height="128" alt="Перфоратор BOSCH с обычным сверлом">
           </div>
           <p class="old-price">30500 Р.</p>
-          <a class="price button" href="blank.html">25500 Р.</a>
+          <p class="item-price">25500 Р.</p>
         </li>
-        <li class="catalog-item">
+        <li class="catalog-item catalog-item-new">
           <h3>Перфоратор BOSCH BFG 2000</h3>
           <div class="product-card-image">
             <img src="img/bfg2000.jpg" width="127" height="112" alt="Перфоратор BOSCH с коротким сверлом">
           </div>
           <p class="old-price">22500 Р.</p>
-          <a class="price button" href="blank.html">12500 Р.</a>
+          <p class="item-price">12500 Р.</p>
         </li>
       </ul>
     </section>
@@ -194,7 +196,7 @@
           <li class="service service-inactive">Гарантия</li>
           <li class="service service-inactive">Кредит</li>
         </ul>
-        <div class="delivery-description">
+        <div class="services-list-description delivery-description visually-hidden">
           <h3>Доставка</h3>
           <p>
           Мы с удовольствием доставим ваш товар прямо<br>
@@ -203,9 +205,24 @@
           поднимая его на ваш этаж!
           </p>
         </div>
-        <p>
-          <img src="img/delivery.png" width="468" height="261" alt="Наша машина, готовая доставлять вам инструменты">
-        </p>
+        <div class="services-list-description guarantee-description visually-hidden">
+          <h3>Гарантия</h3>
+          <p>
+            Если купленный у нас товар поломается или заискрит,<br>
+            а также в случае пожара, спровоцированного его<br>
+            возгоранием,  вы всегда можете быть уверены в нашей<br>
+            гарантии. Мы обменяем сгоревший товар на новый.<br>
+            Дом уж восстановите как-нибудь сами.
+          </p>
+        </div>
+        <div class="services-list-description credit-description">
+          <h3>Кредит</h3>
+          <p>
+            Залезть в долговую яму стало проще!<br>
+            Кредитные консультанты придут вам на помощь.
+          </p>
+          <a class="credit-button button">Отправить заявку</a>
+        </div>
       </section>
     </div>
     <section class="contacts container">
@@ -231,7 +248,7 @@
       <section class="map-section">
         <h2 class="visually-hidden">Как нас найти?</h2>
         <h3>Контакты</h3>
-        <p class="about-company">
+        <p class="about-company about-delivery">
           Вы можете забрать товар сами,<br>заехав в наш офис:
         </p>
         <p class="map-small"><img src="img/map-small.png" width="300" height="158" alt="Карта"></p>
@@ -271,15 +288,15 @@
           Все права защищены
         </p>
         <ul class="socials">
-          <li class="social-button">
+          <li class="social-button social-vk">
             <h3 class="visually-hidden">Вконтакте</h3>
             <a href="#"></a>
           </li>
-          <li class="social-button">
+          <li class="social-button social-facebook">
             <h3 class="visually-hidden">Фейсбук</h3>
             <a href="#"></a>
           </li>
-          <li class="social-button">
+          <li class="social-button social-instagram">
             <h3 class="visually-hidden">Инстаграм</h3>
             <a href="#"></a>
           </li>
