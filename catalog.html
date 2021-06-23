@@ -27,7 +27,7 @@
         </form>
         <div class="user-controls">
           <a href="blank.html" class="user-controls-item main-header-bookmarks">Закладки: 0</a>
-          <a href="blank.html" class="user-controls-item main-header-cart catalog-cart">Корзина: 10</a>
+          <a href="blank.html" class="user-controls-item main-header-cart cart-active">Корзина: 10</a>
           <a href="blank.html" class="user-controls-item main-header-order">Оформить заказ</a>
         </div>
       </div>
@@ -49,7 +49,13 @@
         </div>
         <ul class="catalog-user-links">
           <li class="user-links-item username">
-            <a>Равшан Джамшутович</a>
+            <a href="blank.html" class="user-name">Равшан Джамшутович</a>
+            <a href="blank.html">
+              <svg width="20" height="17" viewBox="0 0 20 17" fill="#C5C5C5" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 8.5L11.125 0V6H5.125V11H11.125V17L20 8.5Z"/>
+              <path d="M2.10604 13.952V3.048C2.12404 2.672 2.27704 1.991 3.11604 1.991H8.14304V0H3.11604C0.938036 0 0.112036 1.81 0.0870361 3.027V13.973C0.112036 15.189 0.938036 17 3.11604 17H8.14304V15.01H3.11604C2.27704 15.01 2.12404 14.327 2.10604 13.952Z"/>
+              </svg>
+            </a>
           </li>
           <li class="my-orders">
             <a href="blank.html">Мои заказы</a>
@@ -61,30 +67,30 @@
       </div>
     </div>
     <nav class="main-navigation container">
-        <ul class="main-navigation-list">
-          <li class="main-navigation-item">
-            <a href="index.html">Главная</a>
-          </li>
-          <li class="main-navigation-item">
-            <a href="blank.html">Компания</a>
-          </li>
-          <li class="main-navigation-item">
-            <a>Каталог</a>
-          </li>
-          <li class="main-navigation-item">
-            <a href="blank.html">Новости</a>
-          </li>
-          <li class="main-navigation-item">
-            <a href="blank.html">Спецпредложения</a>
-          </li>
-          <li class="main-navigation-item">
-            <a href="blank.html">Доставка</a>
-          </li>
-          <li class="main-navigation-item">
-            <a href="blank.html">Контакты</a>
-          </li>
-        </ul>
-      </nav>
+      <ul class="main-navigation-list">
+        <li class="main-navigation-item">
+          <a href="index.html">Главная</a>
+        </li>
+        <li class="main-navigation-item">
+          <a href="blank.html">Компания</a>
+        </li>
+        <li class="main-navigation-item">
+          <a>Каталог</a>
+        </li>
+        <li class="main-navigation-item">
+          <a href="blank.html">Новости</a>
+        </li>
+        <li class="main-navigation-item">
+          <a href="blank.html">Спецпредложения</a>
+        </li>
+        <li class="main-navigation-item">
+          <a href="blank.html">Доставка</a>
+        </li>
+        <li class="main-navigation-item">
+          <a href="blank.html">Контакты</a>
+        </li>
+      </ul>
+    </nav>
   </header>
   <main>
     <h1 class="visually-hidden">Каталог перфораторов</h1>
@@ -175,12 +181,18 @@
             <div class="perforators-list-bar">
               <p class="sort">Сортировка:</p>
               <ul class="sort-list">
-                <li class="price">По цене</li>
-                <li class="item-type">По типу</li>
-                <li class="functions">По функционалу</li>
+                <li class="price sort-list-active">
+                  <a>По цене</a>
+                </li>
+                <li class="item-type">
+                  <a href="#">По типу</a>
+                </li>
+                <li class="functions">
+                  <a href="#">По функционалу</a>
+                </li>
               </ul>
               <button type="button" class="button-sort-up" aria-label="Сортировать товары по возрастающей">
-                <svg class="icon-sort-up" width="12" height="10" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon-sort-up sort-active" width="12" height="10" viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.66241 0L11.1624 10L0.162415 10"/>
                 </svg>
               </button>
@@ -412,7 +424,7 @@
       </section>
     </div>
   </footer>
-  <section class="modal modal-cart">
+  <section class="modal-cart">
     <h2>Товар добавлен в корзину!</h2>
     <div class="modal-background">
       <div class="modal-cart-buttons">

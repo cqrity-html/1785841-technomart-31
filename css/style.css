@@ -178,7 +178,7 @@ img {
   height: 39px;
   background-color: var(--basic-red);
   text-align: center;
-  font-size: 25px;
+  font-size: 23px;
   align-items: center;
   justify-content: center;
   box-shadow: 0 5px 0 0 var(--basic-dark-red);
@@ -188,6 +188,7 @@ img {
 .main-logo:active {
   background-color: var(--basic-dark-red);
   box-shadow: 0 5px 0 0 var(--basic-darkest-red);
+  transition: 300ms ease-out;
 }
 
 .search-form input {
@@ -221,14 +222,17 @@ img {
 
 .search-field:hover + svg {
   fill: var(--basic-white);
+  transition: 300ms ease-out;
 }
 
 .search-field:focus + svg {
   fill: var(--basic-red);
+  transition: 300ms ease-out;
 }
 
 .search-field:focus {
   background-color: var(--basic-white);
+  transition: 300ms ease-out;
 }
 
 .search-form label {
@@ -259,9 +263,11 @@ img {
   padding-right: 25px;
 }
 
-.catalog-cart {
+.bookmarks-active,
+.cart-active {
   padding-left: 40px;
   padding-right: 25px;
+  background-color: var(--basic-red);
 }
 
 .main-header-bookmarks::before {
@@ -307,6 +313,7 @@ img {
 .main-header-cart:hover::before,
 .catalog-cart:hover::before {
   opacity: 1;
+  transition: 300ms ease-out;
 }
 
 .main-header-order {
@@ -320,16 +327,14 @@ img {
   background-color: var(--basic-darkest-gray);
   color: var(--basic-white);
   opacity: 50%;
+  transition: 300ms ease-out;
 }
 
 .main-header-order:active {
   color: var(--basic-white);
   opacity: 50%;
   background-color: var(--basic-green);
-}
-
-.catalog-cart {
-  background-color: var(--basic-red);
+  transition: 300ms ease-out;
 }
 
 .header-description {
@@ -480,6 +485,7 @@ img {
   background-image: url("../img/icon-login-hover.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: 300ms ease-out;
 }
 
 .login:active::before {
@@ -492,22 +498,27 @@ img {
   background-image: url("../img/icon-login.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: 300ms ease-out;
 }
 
 .login:hover a {
   color: var(--basic-red);
+  transition: 300ms ease-out;
 }
 
 .login:active a {
   color: var(--basic-light-gray);
+  transition: 300ms ease-out;
 }
 
 .registration:hover a {
   color: var(--basic-red);
+  transition: 300ms ease-out;
 }
 
 .registration:active a {
   color: var(--basic-light-gray);
+  transition: 300ms ease-out;
 }
 
 .username {
@@ -519,7 +530,7 @@ img {
   position: relative;
 }
 
-.username::before {
+.username .user-name::before {
   content: "";
   position: absolute;
   top: 11px;
@@ -531,31 +542,26 @@ img {
   background-position: 0 0;
 }
 
-.username::after {
-  content: "";
+.username svg {
   position: absolute;
-  top: 11;
+  top: 13px;
   left: 265px;
   width: 20px;
   height: 18px;
-  background-image: url("../img/icon-logout.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
+  cursor: pointer;
 }
 
-.username:hover::after {
-  content: "";
-  position: absolute;
-  top: 11;
-  left: 265px;
-  width: 20px;
-  height: 18px;
-  background-image: url("../img/icon-logout-hover.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
+.username svg:hover {
+  fill: var(--basic-gray);
+  transition: 300ms ease-out;
 }
 
-.username:hover::before {
+.username svg:active {
+  fill: var(--basic-light-gray);
+  transition: 300ms ease-out;
+}
+
+.username .user-name:hover::before {
   content: "";
   position: absolute;
   top: 11px;
@@ -565,21 +571,10 @@ img {
   background-image: url("../img/icon-user-hover.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: 300ms ease-out;
 }
 
-.username:active::after {
-  content: "";
-  position: absolute;
-  top: 11;
-  left: 265px;
-  width: 20px;
-  height: 18px;
-  background-image: url("../img/icon-logout.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
-
-.username:active::before {
+.username .user-name:active::before {
   content: "";
   position: absolute;
   top: 11px;
@@ -589,10 +584,7 @@ img {
   background-image: url("../img/icon-user.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
-}
-
-.username:active a {
-  color: var(--basic-light-gray);
+  transition: 300ms ease-out;
 }
 
 .my-orders a,
@@ -620,12 +612,14 @@ img {
 .my-orders a:hover,
 .cabinet a:hover {
   color: var(--basic-red);
+  transition: 300ms ease-out;
 }
 
 .username a:active,
 .my-orders a:active,
 .cabinet a:active {
   color: var(--basic-light-gray);
+  transition: 300ms ease-out;
 }
 
 .main-navigation {
@@ -657,12 +651,14 @@ img {
 
 .main-navigation-item:hover {
   background-color: var(--basic-dark-gray);
+  transition: 300ms ease-out;
 }
 
 .main-navigation-item:active {
   background-color: var(--basic-darkest-gray);
   color: var(--basic-white);
   opacity: 50%;
+  transition: 300ms ease-out;
 }
 
 /*MAIN-INDEX*/
@@ -706,10 +702,12 @@ img {
 
 .quick-link-button:hover {
   background-color: var(--basic-white-semi-transparent);
+  transition: 300ms ease-out;
 }
 
 .quick-link-button:active {
   background-color: var(--basic-black-semi-transparent);
+  transition: 300ms ease-out;
 }
 
 .quick-links-item h2 {
@@ -892,16 +890,38 @@ img {
   cursor: pointer;
 }
 
+.slider-button-back:focus::before {
+  content: "";
+  position: absolute;
+  top: -27px;
+  left: 22px;
+  width: 22px;
+  height: 40px;
+  background-image: url("../img/icon-left-focus.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: 300ms ease-out;
+}
+
+.slider-button-next:focus::before {
+  content: "";
+  position: absolute;
+  top: -27px;
+  left: -30px;
+  width: 22px;
+  height: 40px;
+  background-image: url("../img/icon-right-focus.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: 300ms ease-out;
+}
+
 .slider-button-back:focus,
 .slider-button-next:focus {
   border: none;
   outline: none;
-}
-
-.slider-button-back:focus::before,
-.slider-button-next:focus::before {
-  border: none;
-  outline: 1px solid var(--basic-red);
 }
 
 .popular-items {
@@ -958,12 +978,14 @@ img {
 
 .catalog-item:hover {
   box-shadow: 0 5px 15px 3px var(--basic-lightest-gray);
+  transition: 300ms ease-out;
 }
 
 .catalog-item .new-item {
   position: absolute;
   top: 0;
-  left: 150px;
+  right: 0;
+  pointer-events: none;
 }
 
 .catalog-item h3 {
@@ -987,7 +1009,7 @@ img {
 
 .catalog-item-hover-buttons {
   order: -1;
-  padding: 40px;
+  padding: 41px;
   position: absolute;
   background-color: var(--basic-white);
   opacity: 0;
@@ -995,6 +1017,7 @@ img {
 
 .catalog-item:hover .catalog-item-hover-buttons {
   opacity: 1;
+  transition: 300ms ease-out;
 }
 
 .buy-button {
@@ -1030,10 +1053,12 @@ img {
 
 .buy-button:hover {
   background-color: var(--basic-light-green);
+  transition: 300ms ease-out;
 }
 
 .buy-button:active {
   background-color: var(--basic-dark-green);
+  transition: 300ms ease-out;
 }
 
 .bookmark-button {
@@ -1054,11 +1079,13 @@ img {
 .bookmark-button:hover {
   border: 3px solid var(--basic-gray);
   background-color: var(--basic-white);
+  transition: 300ms ease-out;
 }
 
 .bookmark-button:active {
   border: 3px solid var(--basic-light-gray);
   color: var(--basic-light-gray);
+  transition: 300ms ease-out;
 }
 
 .catalog-item a {
@@ -1142,6 +1169,7 @@ img {
   justify-content: center;
   width: 220px;
   height: 145px;
+  background-color: var(--basic-white);
   border: 1px solid var(--basic-background);
 }
 
@@ -1151,10 +1179,12 @@ img {
 
 .popular-brand:active {
   opacity: 50%;
+  transition: 300ms ease-out;
 }
 
 .popular-brand:hover {
-  box-shadow: 0 5px 15px 3px var(--basic-lightest-gray);;
+  box-shadow: 0 5px 15px 3px var(--basic-lightest-gray);
+  transition: 300ms ease-out;
 }
 
 .services-background {
@@ -1322,6 +1352,7 @@ img {
 .service-inactive:hover {
   background-color: var(--basic-dark-gray);
   box-shadow: none;
+  transition: 300ms ease-out;
 }
 
 .services h3 {
@@ -1707,6 +1738,7 @@ img {
   background-image: url("../img/checkbox-off-hover.png");
   background-position: 0 0;
   background-repeat: no-repeat;
+  transition: 300ms ease-out;
 }
 
 .filter-input-checkbox:checked:hover + label::before,
@@ -1720,6 +1752,7 @@ img {
   background-image: url("../img/checkbox-on-hover.png");
   background-position: 0 0;
   background-repeat: no-repeat;
+  transition: 300ms ease-out;
 }
 
 .filter-input-checkbox:disabled + label {
@@ -1731,8 +1764,8 @@ img {
   position: absolute;
   left: -35px;
   top: -4px;
-  width: 25px;
-  height: 26px;
+  width: 26px;
+  height: 25px;
   background-image: url("../img/radio-off.png");
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -1743,8 +1776,8 @@ img {
   position: absolute;
   left: -35px;
   top: -4px;
-  width: 25px;
-  height: 26px;
+  width: 26px;
+  height: 25px;
   background-image: url("../img/radio-on.png");
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -1755,12 +1788,13 @@ img {
   content: "";
   position: absolute;
   left: -35px;
-  top: -3px;
-  width: 25px;
-  height: 26px;
+  top: -4px;
+  width: 26px;
+  height: 25px;
   background-image: url("../img/radio-off-hover.png");
   background-position: 0 0;
   background-repeat: no-repeat;
+  transition: 300ms ease-out;
 }
 
 .filter-input-radio:checked:hover + label::before,
@@ -1768,12 +1802,13 @@ img {
   content: "";
   position: absolute;
   left: -35px;
-  top: -3px;
-  width: 25px;
-  height: 26px;
+  top: -4px;
+  width: 26px;
+  height: 25px;
   background-image: url("../img/radio-on-hover.png");
   background-position: 0 0;
   background-repeat: no-repeat;
+  transition: 300ms ease-out;
 }
 
 .filter-input-radio:disabled + label {
@@ -1817,11 +1852,13 @@ img {
 .filter-button:hover {
   border: 1px solid var(--basic-light-gray);
   background-color: var(--basic-white);
+  transition: 300ms ease-out;
 }
 
 .filter-button:active {
   border: 1px solid var(--basic-red);
   background-color: var(--basic-white);
+  transition: 300ms ease-out;
 }
 
 .perforators-list-background {
@@ -1876,10 +1913,18 @@ img {
 .icon-sort-down:hover,
 .icon-sort-up:hover {
   fill: var(--basic-black);
+  transition: 300ms ease-out;
 }
-.icon-sort-down:active,
-.icon-sort-up:active {
+
+.sort-active {
   fill: var(--basic-red);
+  cursor: auto;
+}
+
+.sort-active:hover {
+  fill: var(--basic-red);
+  cursor: auto;
+  transition: 300ms ease-out;
 }
 
 .perforators-list-bar p {
@@ -1912,28 +1957,34 @@ img {
   cursor: pointer;
 }
 
-.price,
-.item-type,
-.functions {
+.price a,
+.item-type a,
+.functions a{
   color: var(--basic-light-gray);
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-color: var(--basic-dark-red);
 }
 
-.price:hover,
-.item-type:hover,
-.functions:hover {
+.price a:hover,
+.item-type a:hover,
+.functions a:hover {
   color: var(--basic-black);
   text-decoration-style: solid;
   text-decoration-color: var(--basic-dark-red);
+  transition: 300ms ease-out;
 }
 
-.price:active,
-.item-type:active,
-.functions:active {
+.sort-list-active a{
   color: var(--basic-red);
   text-decoration: none;
+  cursor: auto;
+}
+
+.sort-list-active a:hover {
+  color: var(--basic-red);
+  text-decoration: none;
+  transition: 300ms ease-out;
 }
 
 .catalog-items {
@@ -1977,10 +2028,12 @@ img {
 
 .pagination-link a:hover {
   border: 1px solid var(--basic-light-gray);
+  transition: 300ms ease-out;
 }
 
 .pagination-link a:active {
   border: 1px solid var(--basic-red);
+  transition: 300ms ease-out;
 }
 
 .pagination-link-current a{
@@ -2090,12 +2143,14 @@ img {
 .footer-catalog-link:hover {
   text-decoration-line: underline;
   text-decoration-color: inherit;
+  transition: 300ms ease-out;
 }
 
 .footer-navigation-item:active,
 .footer-catalog-link:active {
   text-decoration: none;
   opacity: 50%;
+  transition: 300ms ease-out;
 }
 
 .footer-catalog-links {
@@ -2183,6 +2238,7 @@ img {
 
 .social-button:hover {
   background-color: var(--basic-red);
+  transition: 300ms ease-out;
 }
 
 .copyright-link {
@@ -2192,11 +2248,13 @@ img {
 .copyright-link:hover {
   text-decoration-line: underline;
   text-decoration-color: inherit;
+  transition: 300ms ease-out;
 }
 
 .copyright-link:active {
   text-decoration: none;
   color: var(--basic-red);
+  transition: 300ms ease-out;
 }
 
 
