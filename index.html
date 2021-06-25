@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="img/favicon/180.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body class="page-body">
@@ -123,8 +123,8 @@
             </div>
           </div>
           <div class="slider-buttons">
-            <button class="slider-button-back" aria-label="Предыдущий слайд"></button>
-            <button class="slider-button-next" aria-label="Следующий слайд"></button>
+            <button class="slider-button-back slider-toggle-button" aria-label="Предыдущий слайд"></button>
+            <button class="slider-button-next slider-toggle-button" aria-label="Следующий слайд"></button>
           </div>
           <a class="button slider-button" href="catalog.html">Открыть каталог</a>
         </li>
@@ -136,10 +136,20 @@
             </div>
           </div>
           <div class="slider-buttons">
-            <button class="slider-button-back" aria-label="Предыдущий слайд"></button>
-            <button class="slider-button-next" aria-label="Следующий слайд"></button>
+            <button class="slider-button-back slider-toggle-button" aria-label="Предыдущий слайд"></button>
+            <button class="slider-button-next slider-toggle-button" aria-label="Следующий слайд"></button>
           </div>
           <a class="button slider-button" href="catalog.html">Открыть каталог</a>
+        </li>
+        <li class="quick-links-item quick-discount50">
+          <h2>Скидка 50%</h2>
+          <a class="button quick-link-button" href="blank.html">На 350 товаров</a>
+          <img src="img/icon-discount50.png" width="59" height="72" alt="Тележка с товарами">
+        </li>
+        <li class="quick-links-item quick-delivery">
+          <h2>Доставка</h2>
+          <a class="button quick-link-button" href="blank.html">Бесплатно</a>
+          <img src="img/icon-delivery.png" width="78" height="63" alt="Автомобиль доставки">
         </li>
       </ul>
     </section>
@@ -257,11 +267,11 @@
           Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.
         </p>
         <ul class="services-list">
-          <li class="service service-active">Доставка</li>
-          <li class="service service-inactive">Гарантия</li>
-          <li class="service service-inactive">Кредит</li>
+          <li class="service service-active" data-select="service-delivery">Доставка</li>
+          <li class="service service-inactive" data-select="service-guarantee">Гарантия</li>
+          <li class="service service-inactive" data-select="service-credit">Кредит</li>
         </ul>
-        <div class="services-list-description delivery-description">
+        <div class="services-list-description delivery-description" data-el="service-delivery">
           <h3>Доставка</h3>
           <p>
           Мы с удовольствием доставим ваш товар прямо<br>
@@ -270,7 +280,7 @@
           поднимая его на ваш этаж!
           </p>
         </div>
-        <div class="services-list-description guarantee-description">
+        <div class="services-list-description guarantee-description" data-el="service-guarantee">
           <h3>Гарантия</h3>
           <p>
             Если купленный у нас товар поломается или заискрит,<br>
@@ -280,7 +290,7 @@
             Дом уж восстановите как-нибудь сами.
           </p>
         </div>
-        <div class="services-list-description credit-description">
+         <div class="services-list-description credit-description" data-el="service-credit">
           <h3>Кредит</h3>
           <p>
             Залезть в долговую яму стало проще!<br>
@@ -318,11 +328,11 @@
           заехав в наш офис:
         </p>
         <p class="map-small">
-          <a href="https://goo.gl/maps/giG1ddC5NJtAkGCGA">
+          <a class="modal-map-link" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.818026615573!2d30.315192316098244!3d59.96834198188698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696315bc4e8ce61%3A0xe703c377f3424272!2sStudio%20212!5e0!3m2!1sru!2sru!4v1624459570943!5m2!1sru!2sru">
             <img src="img/map-small.png" width="300" height="158" alt="Карта">
           </a>
         </p>
-        <a class="button map-button" href="blank.html">ЗАБЛУДИЛИСЬ? НАПИШИТЕ НАМ!</a>
+        <a class="button feedback-button" href="blank.html">ЗАБЛУДИЛИСЬ? НАПИШИТЕ НАМ!</a>
       </section>
     </section>
   </main>
@@ -400,7 +410,7 @@
       </section>
     </div>
   </footer>
-  <section class="modal-feedback">
+  <section class="modal-feedback visually-hidden">
     <h2 class="visually-hidden">Обратная связь</h2>
     <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
       <div class="feedback-form-content">
@@ -411,7 +421,7 @@
           <input class="feedback-email" type="email" name="email" placeholder="email@example.com">
         </label>
         <label>Текст письма:
-          <textarea class="feedback-message" name="feedback" placeholder="В свободной форме"></textarea>
+          <textarea class="feedback-message" name="message" placeholder="В свободной форме"></textarea>
         </label>
       </div>
       <div class="feedback-form-buttons">
@@ -420,14 +430,22 @@
     </form>
     <button class="modal-close" type="button" aria-label="Закрыть"></button>
   </section>
-  <section class="modal-map">
+  <section class="modal-map visually-hidden">
     <h2 class="visually-hidden">Как нас найти?</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037999040354!2d30.322010416394033!3d59.938716271971415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya+Konyushennaya+ul.%2C+19%2C+Sankt-Peterburg%2C+Russia%2C+191186!5e0!3m2!1sen!2s!4v1441888483426"
-    width="943" height="442" allowfullscreen
-    title="Офис компании по адресу набережная реки Карповки, 5, литера П, Санкт-Петербург">
-    </iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.818026615573!2d30.315192316098244!3d59.96834198188698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696315bc4e8ce61%3A0xe703c377f3424272!2sStudio%20212!5e0!3m2!1sru!2sru!4v1624459570943!5m2!1sru!2sru" width="943" height="442" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     <button class="modal-map-close" type="button"></button>
   </section>
+  <section class="modal-cart visually-hidden">
+    <h2>Товар добавлен в корзину!</h2>
+    <div class="modal-background">
+      <div class="modal-cart-buttons">
+        <a class="button modal-cart-order" href="blank.html">ОФОРМИТЬ ЗАКАЗ</a>
+        <a class="button modal-cart-continue" href="blank.html">ПРОДОЛЖИТЬ ПОКУПКИ</a>
+      </div>
+    </div>
+    <button class="modal-cart-close" type="button"></button>
+  </section>
+  <script src="js/script.min.js"></script>
 </body>
 
 </html>
