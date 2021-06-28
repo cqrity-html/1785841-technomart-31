@@ -57,9 +57,9 @@ modalClose.addEventListener('click', function ()  {
 feedbackForm.addEventListener("submit", function (evt) {
   if (!feedbackName.value || !feedbackEmail.value) {
     evt.preventDefault();
-    feedbackForm.classList.remove("modal-error");
-    feedbackForm.offsetWidth = feedbackForm.offsetWidth;
-    feedbackForm.classList.add("modal-error");
+    modalFeedback.classList.remove("modal-error");
+    modalFeedback.offsetWidth = feedbackForm.offsetWidth;
+    modalFeedback.classList.add("modal-error");
   }
 });
 
@@ -104,52 +104,3 @@ for (var i = 0; i < sliderToggleButtons.length; i++) {
     sliderDrills.classList.toggle('visually-hidden');
   });
 }
-
-//SLIDER-SERVICES
-
-/*
-let services = document.querySelectorAll('.service');
-let servicesListDescriptions = document.querySelectorAll('.services-list-description');
-
-services.forEach(service => {
-  service.addEventListener('click', function (e) {
-  const serviceActive = e.target.dataset.select;
-  console.log(serviceActive);
-  console.log(serviceActive);
-  for (var i = 0; i < servicesListDescriptions.length; i++) {
-      servicesListDescriptions[i].display='none';
-      serviceActive.display='block';}
-});
-});
-*/
-
-
-/*
-let serviceDelivery = document.querySelector(
-  dataset.select('service-delivery'));
-let serviceGuarantee = document.querySelector(
-  dataset.select('service-guarantee'));
-let serviceCredit = document.querySelector(
-  dataset.select('service-credit'));
-let deliveryDescription = document.querySelector(
-  dataset.el('service-delivery'));
-let guaranteeDescription = document.querySelector(
-  dataset.el('service-guarantee'));
-let creditDescription = document.querySelector(
-  dataset.el('service-credit'));
-
-serviceDelivery.addEventListener('click', function () {
-  deliveryDescription.display='block';
-  console.log('Доставка нажата');
-});
-
-serviceGuarantee.addEventListener('click', function () {
-  guaranteeDescription.display='block';
-  console.log('Гарантия нажата');
-});
-
-serviceCredit.addEventListener('click', function () {
-  creditDescription.display='block';
-  console.log('Кредит нажат');
-});
-*/

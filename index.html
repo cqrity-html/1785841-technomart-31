@@ -92,28 +92,38 @@
         <li class="quick-links-item quick-materials">
           <h2>Материалы</h2>
           <a class="button quick-link-button" href="blank.html">На любой вкус</a>
-          <img src="img/icon-materials.png" width="44" height="65" alt="Ведёрко с краской">
+          <div class="promo-image-container">
+            <img src="img/icon-materials.png" width="44" height="65" alt="Ведёрко с краской">
+          </div>
           <img class="new-item" src="img/icon-new-item.svg" width="70" height="70" alt="NEW">
         </li>
         <li class="quick-links-item quick-instruments">
           <h2>Инструмент</h2>
           <a class="button quick-link-button" href="blank.html">На все случаи</a>
-          <img src="img/icon-instruments.png" width="75" height="61" alt="Дрель">
+          <div class="promo-image-container">
+            <img src="img/icon-instruments.png" width="75" height="61" alt="Дрель">
+          </div>
         </li>
         <li class="quick-links-item quick-technics">
           <h2>Техника</h2>
           <a class="button quick-link-button" href="blank.html">Для стройки</a>
-          <img src="img/icon-technics.png" width="78" height="62" alt="Трактор">
+          <div class="promo-image-container">
+            <img src="img/icon-technics.png" width="78" height="62" alt="Трактор">
+          </div>
         </li>
         <li class="quick-links-item quick-discount50">
           <h2>Скидка 50%</h2>
           <a class="button quick-link-button" href="blank.html">На 350 товаров</a>
-          <img src="img/icon-discount50.png" width="59" height="72" alt="Тележка с товарами">
+          <div class="promo-image-container">
+            <img src="img/icon-discount50.png" width="59" height="72" alt="Тележка с товарами">
+          </div>
         </li>
         <li class="quick-links-item quick-delivery">
           <h2>Доставка</h2>
           <a class="button quick-link-button" href="blank.html">Бесплатно</a>
-          <img src="img/icon-delivery.png" width="78" height="63" alt="Автомобиль доставки">
+          <div class="promo-image-container">
+            <img src="img/icon-delivery.png" width="78" height="63" alt="Автомобиль доставки">
+          </div>
         </li>
         <li class="slider slider-perforators">
           <div class="slider-header-back">
@@ -139,17 +149,7 @@
             <button class="slider-button-back slider-toggle-button" aria-label="Предыдущий слайд"></button>
             <button class="slider-button-next slider-toggle-button" aria-label="Следующий слайд"></button>
           </div>
-          <a class="button slider-button" href="catalog.html">Открыть каталог</a>
-        </li>
-        <li class="quick-links-item quick-discount50">
-          <h2>Скидка 50%</h2>
-          <a class="button quick-link-button" href="blank.html">На 350 товаров</a>
-          <img src="img/icon-discount50.png" width="59" height="72" alt="Тележка с товарами">
-        </li>
-        <li class="quick-links-item quick-delivery">
-          <h2>Доставка</h2>
-          <a class="button quick-link-button" href="blank.html">Бесплатно</a>
-          <img src="img/icon-delivery.png" width="78" height="63" alt="Автомобиль доставки">
+          <a class="button slider-button" href="blank.html">Открыть каталог</a>
         </li>
       </ul>
     </section>
@@ -414,12 +414,14 @@
     <h2 class="visually-hidden">Обратная связь</h2>
     <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
       <div class="feedback-form-content">
-        <label>Ваше имя:
-          <input class="feedback-name" type="text" name="name" placeholder="Имя Фамилия">
-        </label>
-        <label>Ваш e-mail:
-          <input class="feedback-email" type="email" name="email" placeholder="email@example.com">
-        </label>
+        <div class="feedback-input">
+          <label >Ваше имя:
+            <input class="feedback-name" type="text" name="name" placeholder="Имя Фамилия">
+          </label>
+          <label>Ваш e-mail:
+            <input class="feedback-email" type="email" name="email" placeholder="email@example.com">
+          </label>
+        </div>
         <label>Текст письма:
           <textarea class="feedback-message" name="message" placeholder="В свободной форме"></textarea>
         </label>
