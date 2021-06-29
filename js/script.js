@@ -15,14 +15,14 @@ let sliderToggleButtons = document.querySelectorAll('.slider-toggle-button');
 
 //MODAL-CART
 
-for (var i = 0; i < buyButtons.length; i++) {
+for (let i = 0; i < buyButtons.length; i++) {
   buyButtons[i].addEventListener('click', function () {
     modalCart.classList.remove('visually-hidden');
     modalCart.classList.add('modal-appear');
   });
 }
 
-for (var i = 0; i < modalCartCloses.length; i++) {
+for (let i = 0; i < modalCartCloses.length; i++) {
   modalCartCloses[i].addEventListener('click', function () {
     modalCart.classList.add('visually-hidden');
     modalCart.classList.remove('modal-appear');
@@ -41,65 +41,71 @@ window.addEventListener("keydown", function (evt) {
 
 //MODAL-FEEDBACK
 
-feedbackButton.addEventListener('click', function (event)  {
-  event.preventDefault();
-  modalFeedback.classList.remove('visually-hidden');
-  modalFeedback.classList.add('modal-appear');
-  feedbackName.focus();
-});
+if (feedbackButton && modalFeedback && feedbackName && modalClose) {
 
-modalClose.addEventListener('click', function ()  {
-  modalFeedback.classList.add('visually-hidden');
-  modalFeedback.classList.remove("modal-error");
-  modalFeedback.classList.remove('modal-appear');
-});
+  feedbackButton.addEventListener('click', function (event)  {
+    event.preventDefault();
+    modalFeedback.classList.remove('visually-hidden');
+    modalFeedback.classList.add('modal-appear');
+    feedbackName.focus();
+  });
 
-feedbackForm.addEventListener("submit", function (evt) {
-  if (!feedbackName.value || !feedbackEmail.value) {
-    evt.preventDefault();
+  modalClose.addEventListener('click', function ()  {
+    modalFeedback.classList.add('visually-hidden');
     modalFeedback.classList.remove("modal-error");
-    modalFeedback.offsetWidth = feedbackForm.offsetWidth;
-    modalFeedback.classList.add("modal-error");
-  }
-});
+    modalFeedback.classList.remove('modal-appear');
+  });
 
-window.addEventListener("keydown", function (evt) {
-  if (evt.key === 'Esc' || evt.key === 'Escape') {
-    if (!modalFeedback.classList.contains("visually-hidden")) {
+  feedbackForm.addEventListener("submit", function (evt) {
+    if (!feedbackName.value || !feedbackEmail.value) {
       evt.preventDefault();
-      modalFeedback.classList.add("visually-hidden");
       modalFeedback.classList.remove("modal-error");
-      modalFeedback.classList.remove('modal-appear');
+      modalFeedback.offsetWidth = feedbackForm.offsetWidth;
+      modalFeedback.classList.add("modal-error");
     }
-  }
-});
+  });
+
+  window.addEventListener("keydown", function (evt) {
+    if (evt.key === 'Esc' || evt.key === 'Escape') {
+      if (!modalFeedback.classList.contains("visually-hidden")) {
+        evt.preventDefault();
+        modalFeedback.classList.add("visually-hidden");
+        modalFeedback.classList.remove("modal-error");
+        modalFeedback.classList.remove('modal-appear');
+      }
+    }
+  });
+}
 
 //MODAL-MAP
 
-modalMapLink.addEventListener('click', function (event) {
-  event.preventDefault();
-  modalMap.classList.remove('visually-hidden');
-  modalMap.classList.add('modal-appear');
-});
+if (modalMapLink && modalMap && modalMapClose) {
 
-modalMapClose.addEventListener('click', function () {
-  modalMap.classList.add('visually-hidden');
-  modalMap.classList.remove('modal-appear');
-});
+  modalMapLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    modalMap.classList.remove('visually-hidden');
+    modalMap.classList.add('modal-appear');
+  });
 
-window.addEventListener("keydown", function (evt) {
-  if (evt.key === 'Esc' || evt.key === 'Escape') {
-    if (!modalMap.classList.contains("visually-hidden")) {
-      evt.preventDefault();
-      modalMap.classList.add("visually-hidden");
-      modalMap.classList.remove('modal-appear');
+  modalMapClose.addEventListener('click', function () {
+    modalMap.classList.add('visually-hidden');
+    modalMap.classList.remove('modal-appear');
+  });
+
+  window.addEventListener("keydown", function (evt) {
+    if (evt.key === 'Esc' || evt.key === 'Escape') {
+      if (!modalMap.classList.contains("visually-hidden")) {
+        evt.preventDefault();
+        modalMap.classList.add("visually-hidden");
+        modalMap.classList.remove('modal-appear');
+      }
     }
-  }
-});
+  });
+}
 
 //SLIDER
 
-for (var i = 0; i < sliderToggleButtons.length; i++) {
+for (let i = 0; i < sliderToggleButtons.length; i++) {
   sliderToggleButtons[i].addEventListener('click', function () {
     sliderDrills.classList.toggle('visually-hidden');
   });
