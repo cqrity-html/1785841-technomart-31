@@ -1471,7 +1471,7 @@ img {
   width: 220px;
   height: 1px;
   background-color: var(--basic-lightest-gray);
-  opacity: 0,3;
+  opacity: 0.3;
 }
 
 .filter-range {
@@ -2282,7 +2282,7 @@ img {
   box-sizing: border-box;
   border-radius: 2px;
   font-family: "PT Sans", "Arial", sans-serif;
-  color: var(--basic-light-grey);
+  color: var(--basic-light-gray);
   font-size: 13px;
   line-height: 24px;
   margin-top: 11px;
@@ -2300,7 +2300,7 @@ img {
   box-sizing: border-box;
   border-radius: 2px;
   font-family: "PT Sans", "Arial", sans-serif;
-  color: var(--basic-light-grey);
+  color: var(--basic-light-gray);
   font-size: 13px;
   line-height: 24px;
   margin-top: 11px;
