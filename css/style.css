@@ -1296,12 +1296,7 @@ img {
   cursor: pointer;
 }
 
-.service-active {
-  background-color: var(--basic-white);
-  color: var(--basic-gray);
-}
-
-.service-inactive {
+.service {
   background-color: var(--basic-gray);
   color: var(--basic-white);
   box-shadow:
@@ -1309,10 +1304,22 @@ img {
   inset 0 1px 0 0 var(--basic-shadow-gray);
 }
 
-.service-inactive:hover {
+.service-active {
+  background-color: var(--basic-white);
+  color: var(--basic-gray);
+  box-shadow: none;
+}
+
+.service:hover {
   background-color: var(--basic-dark-gray);
   box-shadow: none;
   transition: 300ms ease-out;
+}
+
+.service-active:hover {
+  background-color: var(--basic-white);
+  color: var(--basic-gray);
+  box-shadow: none;
 }
 
 .services h3 {
